@@ -1,6 +1,4 @@
-const scanButton = document.getElementById('scanButton');
-const writeButton = document.getElementById('writeButton');
-scanButton.addEventListener("click", async () => {
+document.getElementById('scanButton').addEventListener("click", async () => {
   log("User clicked scan button");
 
   try {
@@ -21,7 +19,7 @@ scanButton.addEventListener("click", async () => {
   }
 });
 
-writeButton.addEventListener("click", async () => {
+document.getElementById('writeButton').addEventListener("click", async () => {
   log("User clicked write button");
 
   try {
