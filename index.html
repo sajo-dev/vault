@@ -81,7 +81,7 @@
 
   <script>
     scanButton.addEventListener("click", async () => {
-     
+     const decoder = new TextDecoder();
 
       try {
         const ndef = new NDEFReader();
@@ -93,7 +93,11 @@
         });
 
         ndef.addEventListener("reading", ({ message, serialNumber }) => {
-          log(`> Records: (${message.records[0].toRecords()})`);
+         
+
+          for (const record of message.records){
+            log("Data: " +decoder.decode(record.data));
+          }
         });
       } catch (error) {
         log("Argh! " + error);
