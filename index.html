@@ -31,13 +31,7 @@
 
   </p>
   <h3>Background</h3>
-  <p>
-    Web NFC aims to provide sites the ability to read and write to NFC tags when
-    they are brought in close proximity to the user’s device (usually 5-10 cm, 2-4
-    inches). The current scope is limited to NDEF, a lightweight binary message
-    format. Low-level I/O operations (e.g. ISO-DEP, NFC-A/B, NFC-F) and Host-based
-    Card Emulation (HCE) are not supported within the current scope.
-  </p>
+
 
   <button id="scanButton">Scan</button>
   <button id="writeButton">Write</button>
@@ -77,27 +71,12 @@
     <pre id="log"></pre>
   </div>
 
-
-  <script>
-    if (/Chrome\/(\d+\.\d+.\d+.\d+)/.test(navigator.userAgent)) {
-      // Let's log a warning if the sample is not supposed to execute on this
-      // version of Chrome.
-      if (89 > parseInt(RegExp.$1)) {
-        ChromeSamples.setStatus('Warning! Keep in mind this sample has been tested with Chrome ' + 89 + '.');
-      }
-    }
-  </script>
-
-
-
   <script>
     log = ChromeSamples.log;
 
     if (!("NDEFReader" in window))
       ChromeSamples.setStatus("Web NFC is not available. Use Chrome on Android.");
   </script>
-
-
 
 
   <script>
@@ -114,7 +93,7 @@
         });
 
         ndef.addEventListener("reading", ({ message, serialNumber }) => {
-          log(`> Records: (${message.records.text})`);
+          log(`> Records: (${message})`);
         });
       } catch (error) {
         log("Argh! " + error);
