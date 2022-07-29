@@ -93,7 +93,12 @@
         });
 
         ndef.addEventListener("reading", ({ message, serialNumber }) => {
-          log(`> Records: (${JSON.stringify(message)})`);
+          log(`> Records: (${message})`);
+          for (propriedade in message){
+
+            output += propriedade + ':' + message[propriedade];
+
+          }
         });
       } catch (error) {
         log("Argh! " + error);
