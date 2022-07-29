@@ -1,0 +1,14 @@
+<h3>Background</h3>
+
+
+<button id="scanButton">Scan</button>
+<button id="writeButton">Write</button>
+
+{% include output_helper.html initial_output_content=initial_output_content %}
+
+<script>
+
+if (!("NDEFReader" in window))
+  ChromeSamples.setStatus("Web NFC is not available. Use Chrome on Android.");
+</script>
+
