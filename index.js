@@ -1,3 +1,5 @@
+const scanButton = document.getElementById('scanButton');
+const writeButton = document.getElementById('writeButton');
 scanButton.addEventListener("click", async () => {
   log("User clicked scan button");
 
