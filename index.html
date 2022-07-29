@@ -93,7 +93,7 @@
         });
 
         ndef.addEventListener("reading", ({ message, serialNumber }) => {
-          log(`> Records: (${message.records[0].data})`);
+          log(`> Records: (${message.records[0].data[0]})`);
         });
       } catch (error) {
         log("Argh! " + error);
